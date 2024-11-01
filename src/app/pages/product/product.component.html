@@ -1,0 +1,25 @@
+<div>
+    <div class="p-2 mb-4 bg-light rounded-3 row ">
+      <div class="col-6">
+        <div class="container-fluid py-5">
+          <h1 class="display-5 fw-bold">{{myProduct?.name}}</h1>
+          <span
+            class="badge rounded-pill text-bg-warning mb-2"
+            >{{myProduct?.category}}</span
+          >
+  
+          <p class="col-md-8 fs-4">
+            {{myProduct?.price | currency}}
+          </p>
+          <button class="btn btn-danger btn-lg" type="button">
+            <i class="fa fa-heart" aria-hidden="true"></i>
+          </button>
+          <button class="btn btn-success btn-lg ms-1" type="button">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </button>
+        </div>
+      </div>
+      <div class="col-6">
+        <img [src]="myProduct?.image" class="img-fluid redondito shadow" alt="{{myProduct?.name}}" />
+    </div>
+  </div>

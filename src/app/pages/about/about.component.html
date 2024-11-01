@@ -1,2 +1,31 @@
-<p>HOLA PAPU ABOUT!</p>
-<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjsYUbc1bzPJ2j-cxSMN4mwXbOD6HyOl0uiI3zE-Nj1kpVQk0sy6UPUJlopU460dVtc_o&usqp=CAU" alt="">
+<div class="p-5 mb-4 bg-light rounded-3">
+    <div class="container-fluid py-5">
+        <h1 class="display-5 fw-bold">{{ iAm.name + ' ' + iAm.lastName }}</h1>
+        <p class="col-md-8 fs-4">
+            {{ iAm.descripcion }}
+        </p>
+        <button (click)="verMas()" class="btn btn-dark btn-lg" type="button">
+            {{ ver === true ? 'ver menos' : 'ver mas' }}
+        </button>
+    </div>
+</div>
+<div class="container">
+    @if (ver == true) {
+        <h2>
+            acá va mi info
+        </h2>
+
+    } @else if (ver == false) {
+        <h2></h2>
+    }
+</div>
+@if (ver === true) {
+    <div class="container">
+        <ul class="list-group list-group-numbered">
+            @for (favorito of favoritos; track $index) {
+                <li class="list-group-item">{{ favorito }}</li>
+            }
+        </ul>
+        
+    </div>
+}
